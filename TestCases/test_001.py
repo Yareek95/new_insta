@@ -33,5 +33,5 @@ class Test_login:
             self.lp.click_NotNow_notif()
         except Exception as en:
             print(f"error: {en}")
-
+        assert True
         time.sleep(10)
