@@ -34,4 +34,4 @@ class Test_login:
         except Exception as en:
             print(f"error: {en}")
 
-        time.sleep(15)
+        time.sleep(10)
