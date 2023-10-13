@@ -3,15 +3,18 @@ import time
 import pytest
 from selenium import webdriver
 from PageObjects.LoginPage import LoginPage
+from PageObjects.MainPage import MainPage
+from PageObjects.SomePage import SomePage
 
 from utilities.readProperties import ReadConfig
 
 
 
-class Test_login:
+class TestMessage:
     baseURL = ReadConfig.getApplicationURL()
     username = ReadConfig.getUserName()
     password = ReadConfig.getPassword()
+    search_name = ReadConfig.getSearchName()
 
 
     def test_login(self, setup):
@@ -20,6 +23,9 @@ class Test_login:
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
         self.lp = LoginPage(self.driver)
+        self.mp = MainPage(self.driver)
+        self.sp = SomePage(self.driver)
+
 
         self.lp.set_username(self.username)
         self.lp.set_password(self.password)
@@ -34,4 +40,12 @@ class Test_login:
         except Exception as en:
             print(f"error: {en}")
         assert True
-        time.sleep(10)
+
+        self.mp.click_search()
+        time.sleep(1)
+        self.mp.search_and_click(self.search_name)
+        self.sp.click_message()
+        messages = ["Have a good day", "Лох", "Stay safe", "Good Morning", "Говно", "Safe Travel"]
+        for repeat in range(20):
+            for message in messages:
+                self.sp.write_message(message)
