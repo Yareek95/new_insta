@@ -12,7 +12,7 @@ from utilities.readProperties import ReadConfig
 
 class TestMessage:
     baseURL = ReadConfig.getApplicationURL()
-    username = ReadConfig.getUserName()
+    username = ReadConfig.getUserName1()
     password = ReadConfig.getPassword()
     search_name = ReadConfig.getSearchName()
 
@@ -45,7 +45,7 @@ class TestMessage:
         time.sleep(1)
         self.mp.search_and_click(self.search_name)
         self.sp.click_message()
-        messages = ["Have a good day", "Лох", "Stay safe", "Good Morning", "Говно", "Safe Travel"]
-        for repeat in range(20):
+        messages = ["Have a good day", "Лох", "Good Morning", "Говно", "Safe Travel", "Додик"]
+        for repeat in range(10):
             for message in messages:
                 self.sp.write_message(message)
