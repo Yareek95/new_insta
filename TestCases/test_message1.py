@@ -5,19 +5,17 @@ from selenium import webdriver
 from PageObjects.LoginPage import LoginPage
 from PageObjects.MainPage import MainPage
 from PageObjects.SomePage import SomePage
+from PageObjects.MessagePage import MessagePage
 
 from utilities.readProperties import ReadConfig
-
 
 
 class TestMessage:
     baseURL = ReadConfig.getApplicationURL()
     username = ReadConfig.getUserName1()
     password = ReadConfig.getPassword()
-    search_name = ReadConfig.getSearchName()
 
-
-    def test_login(self, setup):
+    def test_msg_1(self, setup, name):
         self.driver = setup
         self.driver.get(self.baseURL)
         self.driver.maximize_window()
@@ -25,7 +23,7 @@ class TestMessage:
         self.lp = LoginPage(self.driver)
         self.mp = MainPage(self.driver)
         self.sp = SomePage(self.driver)
-
+        self.msg = MessagePage(self.driver)
 
         self.lp.set_username(self.username)
         self.lp.set_password(self.password)
@@ -40,12 +38,15 @@ class TestMessage:
         except Exception as en:
             print(f"error: {en}")
         assert True
-
-        self.mp.click_search()
+        self.mp.click_msg()
         time.sleep(1)
-        self.mp.search_and_click(self.search_name)
-        self.sp.click_message()
-        messages = ["Have a good day", "Лох", "Good Morning", "Говно", "Safe Travel", "Додик"]
+        self.msg.click_send_msg()
+        time.sleep(1)
+        self.msg.search_and_click(name)                     #error
+        self.msg.click_chat()
+        time.sleep(1)
+        messages = ["Good night", "Sweet Dreams"]
         for repeat in range(10):
             for message in messages:
-                self.sp.write_message(message)
+                self.sp.write_and_send_msg(message)
+                time.sleep(2)

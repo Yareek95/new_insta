@@ -6,6 +6,7 @@ from PageObjects.LoginPage import LoginPage
 from PageObjects.MainPage import MainPage
 from PageObjects.SomePage import SomePage
 from PageObjects.MessagePage import MessagePage
+from PageObjects.ProfilePage import ProfilePage
 
 from utilities.readProperties import ReadConfig
 
@@ -15,7 +16,7 @@ class TestMessage:
     username = ReadConfig.getUserName2()
     password = ReadConfig.getPassword()
 
-    def test_msg_2(self, setup, name):
+    def test_like1(self, setup, name):
         self.driver = setup
         self.driver.get(self.baseURL)
         self.driver.maximize_window()
@@ -24,6 +25,7 @@ class TestMessage:
         self.mp = MainPage(self.driver)
         self.sp = SomePage(self.driver)
         self.msg = MessagePage(self.driver)
+        self.pp = ProfilePage(self.driver)
 
         self.lp.set_username(self.username)
         self.lp.set_password(self.password)
@@ -38,15 +40,11 @@ class TestMessage:
         except Exception as en:
             print(f"error: {en}")
         assert True
-        self.mp.click_msg()
-        time.sleep(1)
-        self.msg.click_send_msg()
-        time.sleep(1)
-        self.msg.search_and_click(name)
-        self.msg.click_chat()
-        time.sleep(1)
-        messages = ["Have a good day", "Good Morning"]
-        for repeat in range(10):
-            for message in messages:
-                self.sp.write_and_send_msg(message)
-                time.sleep(2)
+        self.mp.click_search()
+        self.mp.search_and_click(name)
+        self.pp.open_post()
+        times = 0
+        while times < 5:
+            self.pp.put_like()
+            self.pp.click_next()
+            times += 1

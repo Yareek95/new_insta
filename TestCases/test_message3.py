@@ -12,10 +12,10 @@ from utilities.readProperties import ReadConfig
 
 class TestMessage:
     baseURL = ReadConfig.getApplicationURL()
-    username = ReadConfig.getUserName2()
+    username = ReadConfig.getUserName3()
     password = ReadConfig.getPassword()
 
-    def test_msg_2(self, setup, name):
+    def test_msg_3(self, setup, name):
         self.driver = setup
         self.driver.get(self.baseURL)
         self.driver.maximize_window()
@@ -45,7 +45,7 @@ class TestMessage:
         self.msg.search_and_click(name)
         self.msg.click_chat()
         time.sleep(1)
-        messages = ["Have a good day", "Good Morning"]
+        messages = ["Have a good day", "Stay Safe"]
         for repeat in range(10):
             for message in messages:
                 self.sp.write_and_send_msg(message)

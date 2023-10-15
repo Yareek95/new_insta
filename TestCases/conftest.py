@@ -13,10 +13,14 @@ def setup(browser):
         driver = webdriver.Ie()
     return driver
 
-
-def pytest_addoption(parser):       #This will get the value from CLI / hooks
+def pytest_addoption(parser):
     parser.addoption("--browser")
+    parser.addoption("--name")
 
 @pytest.fixture()
-def browser(request):       #This will return the Browser value to setup method
+def browser(request):
     return request.config.getoption("--browser")
+
+@pytest.fixture
+def name(request):
+    return request.config.getoption("--name")

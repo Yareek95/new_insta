@@ -20,11 +20,16 @@ class ReadConfig():
         return username
 
     @staticmethod
+    def getUserName3():
+        username = config.get('common info', 'username3')
+        return username
+
+    @staticmethod
+    def getUserName4():
+        username = config.get('common info', 'username4')
+        return username
+
+    @staticmethod
     def getPassword():
         password = config.get('common info', 'password')
         return password
-
-    @staticmethod
-    def getSearchName():
-        search_name = config.get('common info', 'search_name')
-        return search_name
