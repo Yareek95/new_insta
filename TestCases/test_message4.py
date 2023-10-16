@@ -15,7 +15,8 @@ class TestMessage:
     username = ReadConfig.getUserName4()
     password = ReadConfig.getPassword()
 
-    def test_msg_3(self, setup, name):
+    @pytest.mark.message
+    def test_msg_4(self, setup, name):
         self.driver = setup
         self.driver.get(self.baseURL)
         self.driver.maximize_window()

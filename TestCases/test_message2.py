@@ -15,6 +15,7 @@ class TestMessage:
     username = ReadConfig.getUserName2()
     password = ReadConfig.getPassword()
 
+    @pytest.mark.message
     def test_msg_2(self, setup, name):
         self.driver = setup
         self.driver.get(self.baseURL)

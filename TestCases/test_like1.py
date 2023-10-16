@@ -16,6 +16,7 @@ class TestMessage:
     username = ReadConfig.getUserName2()
     password = ReadConfig.getPassword()
 
+    @pytest.mark.like
     def test_like1(self, setup, name):
         self.driver = setup
         self.driver.get(self.baseURL)
