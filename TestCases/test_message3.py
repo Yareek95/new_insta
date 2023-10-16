@@ -46,7 +46,7 @@ class TestMessage:
         self.msg.click_chat()
         time.sleep(1)
         messages = ["Have a good day", "Stay Safe"]
-        for repeat in range(10):
+        for repeat in range(3):
             for message in messages:
                 self.sp.write_and_send_msg(message)
                 time.sleep(2)

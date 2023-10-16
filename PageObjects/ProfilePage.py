@@ -8,6 +8,7 @@ class ProfilePage:
     link_post_xpath = "//article[@class='x1iyjqo2']/div/div/div[1]/div[1]/a"
     btn_like_xpath = "//span[@class='_aamw']//div[@role='button']"
     btn_next_xpath = "//div[contains(@class,'_aaqg _aaqh')]//button[contains(@type,'button')]"
+    btn_follow_xpath = "//div[contains(text(), 'Follow')]/ancestor::button"
     def __init__(self, driver):
         self.driver = driver
 
@@ -16,6 +17,9 @@ class ProfilePage:
 
     def num_of_following(self):
         return self.driver.find_element(By.XPATH, self.num_following_xpath).text
+
+    def click_follow(self):
+        self.driver.find_element(By.XPATH, self.btn_follow_xpath).click()
 
     def open_post(self):
         self.driver.find_element(By.XPATH, self.link_post_xpath).click()
