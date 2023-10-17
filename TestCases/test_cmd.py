@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
+@pytest.mark.test
 class Test_cmd:
     baseURL = "https://demo.nopcommerce.com/"
 
@@ -14,5 +15,6 @@ class Test_cmd:
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
         self.driver.find_element(By.XPATH, "//input[@id='small-searchterms']").send_keys(name)
-        time.sleep(5)
+        time.sleep(3)
         print(self.driver.title)
+        assert True
