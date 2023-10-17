@@ -1,0 +1,56 @@
+Launching Chrome browser.............
+Instagram • Chats
+error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(), 'Not Now')]"}
+  (Session info: chrome=118.0.5993.71); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00E3CE93+45171]
+	(No symbol) [0x00DC90E1]
+	(No symbol) [0x00CBBE1D]
+	(No symbol) [0x00CEED40]
+	(No symbol) [0x00CEF20B]
+	(No symbol) [0x00D1F692]
+	(No symbol) [0x00D0B094]
+	(No symbol) [0x00D1DCFA]
+	(No symbol) [0x00D0AE46]
+	(No symbol) [0x00CE675E]
+	(No symbol) [0x00CE78FD]
+	GetHandleVerifier [0x010F5499+2897529]
+	GetHandleVerifier [0x0113DC4B+3194411]
+	GetHandleVerifier [0x01137A21+3169281]
+	GetHandleVerifier [0x00EC6110+606960]
+	(No symbol) [0x00DD2E5C]
+	(No symbol) [0x00DCEFE8]
+	(No symbol) [0x00DCF10F]
+	(No symbol) [0x00DC1807]
+	BaseThreadInitThunk [0x75D1FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x774F7C6E+286]
+	RtlGetAppContainerNamedObjectPath [0x774F7C3E+238]
+
+Instagram • Chats
+error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(), 'Not Now')]"}
+  (Session info: chrome=118.0.5993.71); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00E3CE93+45171]
+	(No symbol) [0x00DC90E1]
+	(No symbol) [0x00CBBE1D]
+	(No symbol) [0x00CEED40]
+	(No symbol) [0x00CEF20B]
+	(No symbol) [0x00D1F692]
+	(No symbol) [0x00D0B094]
+	(No symbol) [0x00D1DCFA]
+	(No symbol) [0x00D0AE46]
+	(No symbol) [0x00CE675E]
+	(No symbol) [0x00CE78FD]
+	GetHandleVerifier [0x010F5499+2897529]
+	GetHandleVerifier [0x0113DC4B+3194411]
+	GetHandleVerifier [0x01137A21+3169281]
+	GetHandleVerifier [0x00EC6110+606960]
+	(No symbol) [0x00DD2E5C]
+	(No symbol) [0x00DCEFE8]
+	(No symbol) [0x00DCF10F]
+	(No symbol) [0x00DC1807]
+	BaseThreadInitThunk [0x75D1FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x774F7C6E+286]
+	RtlGetAppContainerNamedObjectPath [0x774F7C3E+238]
+
+Instagram • Chats

@@ -10,6 +10,11 @@ class ReadConfig():
         return url
 
     @staticmethod
+    def getUserName(username_number):
+        key = f'username{username_number}'
+        return config.get('common info', key)
+
+    '''@staticmethod
     def getUserName1():
         username = config.get('common info', 'username1')
         return username
@@ -27,7 +32,7 @@ class ReadConfig():
     @staticmethod
     def getUserName4():
         username = config.get('common info', 'username4')
-        return username
+        return username'''
 
     @staticmethod
     def getPassword():

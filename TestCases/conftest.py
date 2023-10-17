@@ -10,7 +10,8 @@ def setup(browser):
         driver = webdriver.Firefox()
         print("Launching Firefox browser.............")
     else:
-        driver = webdriver.Ie()
+        driver = webdriver.Edge()
+        print("Launching Edge browser.............")
     return driver
 
 def pytest_addoption(parser):
