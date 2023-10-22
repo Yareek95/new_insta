@@ -19,7 +19,7 @@ class TestMessage:
     password = ReadConfig.getPassword()
 
 
-    def test_like1(self, setup, name):
+    def test_like(self, setup, name):
         self.driver = setup
         self.driver.get(self.baseURL)
         self.driver.maximize_window()
